@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Sparkles, Calendar } from "lucide-react";
+import stitchImage from "@/assets/stitch.png";
 
 const Index = () => {
   // Defina aqui as datas importantes (você pode alterar conforme necessário)
@@ -146,7 +147,11 @@ const Index = () => {
 
         {/* Footer com citação do Stitch */}
         <div className="text-center text-lg text-muted-foreground italic animate-in fade-in duration-1000 delay-500">
-          <p className="text-6xl mb-4">🌺</p>
+          <img 
+            src={stitchImage} 
+            alt="Stitch" 
+            className="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
+          />
           <p className="text-primary font-semibold">
             "Stitch não deixa família para trás... ou esquecer."
           </p>

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Sparkles, Calendar } from "lucide-react";
-import stitchImage from "@/assets/stitch.jpg";
 
 const Index = () => {
   // Defina aqui as datas importantes (você pode alterar conforme necessário)
@@ -49,59 +48,55 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-primary/20 via-background to-accent/20 py-8 px-4">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header com Stitch */}
-        <div className="text-center space-y-4 animate-fade-in">
-          <div className="flex justify-center items-center gap-4 mb-4">
-            <Heart className="w-12 h-12 text-accent animate-pulse-soft" />
-            <div className="text-8xl animate-pulse-soft">💜</div>
-            <Heart className="w-12 h-12 text-accent animate-pulse-soft" />
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-2 animate-scale-in">
+        <div className="text-center space-y-4 animate-in fade-in duration-1000">
+          <div className="text-8xl mb-4 animate-bounce">💜</div>
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-2">
             Nossa História de Amor
           </h1>
-          <p className="text-2xl text-muted-foreground flex items-center justify-center gap-2 animate-fade-in">
-            <Sparkles className="w-6 h-6 text-accent animate-pulse-soft" />
+          <p className="text-2xl text-muted-foreground flex items-center justify-center gap-2">
+            <Sparkles className="w-6 h-6 text-accent" />
             Ohana significa família
-            <Sparkles className="w-6 h-6 text-accent animate-pulse-soft" />
+            <Sparkles className="w-6 h-6 text-accent" />
           </p>
         </div>
 
         {/* Contador Principal */}
-        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in">
+        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000">
           <CardHeader>
             <CardTitle className="text-3xl text-center flex items-center justify-center gap-3">
-              <Heart className="w-8 h-8 text-accent animate-pulse-soft" />
+              <Heart className="w-8 h-8 text-accent animate-pulse" />
               Namorando há
-              <Heart className="w-8 h-8 text-accent animate-pulse-soft" />
+              <Heart className="w-8 h-8 text-accent animate-pulse" />
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-6 bg-primary/10 rounded-lg hover:bg-primary/15 transition-all duration-300 hover:scale-105">
-                <div className="text-5xl font-bold text-primary mb-2 animate-scale-in">
+              <div className="text-center p-6 bg-primary/10 rounded-lg">
+                <div className="text-5xl font-bold text-primary mb-2">
                   {timeElapsed.days}
                 </div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
                   Dias
                 </div>
               </div>
-              <div className="text-center p-6 bg-primary/10 rounded-lg hover:bg-primary/15 transition-all duration-300 hover:scale-105">
-                <div className="text-5xl font-bold text-primary mb-2 animate-scale-in">
+              <div className="text-center p-6 bg-primary/10 rounded-lg">
+                <div className="text-5xl font-bold text-primary mb-2">
                   {timeElapsed.hours}
                 </div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
                   Horas
                 </div>
               </div>
-              <div className="text-center p-6 bg-primary/10 rounded-lg hover:bg-primary/15 transition-all duration-300 hover:scale-105">
-                <div className="text-5xl font-bold text-primary mb-2 animate-scale-in">
+              <div className="text-center p-6 bg-primary/10 rounded-lg">
+                <div className="text-5xl font-bold text-primary mb-2">
                   {timeElapsed.minutes}
                 </div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
                   Minutos
                 </div>
               </div>
-              <div className="text-center p-6 bg-primary/10 rounded-lg hover:bg-primary/15 transition-all duration-300 hover:scale-105">
-                <div className="text-5xl font-bold text-primary mb-2 animate-scale-in">
+              <div className="text-center p-6 bg-primary/10 rounded-lg">
+                <div className="text-5xl font-bold text-primary mb-2">
                   {timeElapsed.seconds}
                 </div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
@@ -113,11 +108,11 @@ const Index = () => {
         </Card>
 
         {/* Datas Importantes */}
-        <div className="grid md:grid-cols-2 gap-6 animate-fade-in">
-          <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+        <div className="grid md:grid-cols-2 gap-6 animate-in slide-in-from-bottom duration-1000 delay-200">
+          <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 transition-transform">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-accent">
-                <Calendar className="w-6 h-6 animate-pulse-soft" />
+                <Calendar className="w-6 h-6" />
                 Primeiro Encontro
               </CardTitle>
             </CardHeader>
@@ -131,10 +126,10 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+          <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 transition-transform">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-accent">
-                <Heart className="w-6 h-6 animate-pulse-soft" />
+                <Heart className="w-6 h-6" />
                 Primeiro Beijo
               </CardTitle>
             </CardHeader>
@@ -150,15 +145,9 @@ const Index = () => {
         </div>
 
         {/* Footer com citação do Stitch */}
-        <div className="text-center text-lg text-muted-foreground italic animate-fade-in">
-          <div className="flex justify-center mb-6">
-            <img 
-              src={stitchImage} 
-              alt="Stitch" 
-              className="w-32 h-32 rounded-full object-cover border-4 border-primary/30 shadow-lg animate-float"
-            />
-          </div>
-          <p className="text-primary font-semibold text-xl">
+        <div className="text-center text-lg text-muted-foreground italic animate-in fade-in duration-1000 delay-500">
+          <p className="text-6xl mb-4">🌺</p>
+          <p className="text-primary font-semibold">
             "Stitch não deixa família para trás... ou esquecer."
           </p>
         </div>

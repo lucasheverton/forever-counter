@@ -5,9 +5,9 @@ import stitchImage from "@/assets/stitch.png";
 
 const Index = () => {
   // Defina aqui as datas importantes (você pode alterar conforme necessário)
-  const relationshipStart = new Date("2024-01-15T00:00:00"); // Data de início do namoro
-  const firstDate = new Date("2024-01-01T19:30:00"); // Data do primeiro encontro
-  const firstKiss = new Date("2024-01-10T22:00:00"); // Data do primeiro beijo
+  const relationshipStart = new Date("2025-08-08T00:00:00"); // Data de início do namoro
+  const firstDate = new Date("2024-12-07T12:45:00"); // Data do primeiro encontro
+  const firstKiss = new Date("2024-12-07T14:30:00"); // Data do primeiro beijo
 
   const [timeElapsed, setTimeElapsed] = useState({
     days: 0,
@@ -56,7 +56,7 @@ const Index = () => {
           </h1>
           <p className="text-2xl text-muted-foreground flex items-center justify-center gap-2">
             <Sparkles className="w-6 h-6 text-accent" />
-            Ohana significa família
+            Eu te amo muito 💙 meu pôr do sol 🌇
             <Sparkles className="w-6 h-6 text-accent" />
           </p>
         </div>
@@ -66,7 +66,7 @@ const Index = () => {
           <CardHeader>
             <CardTitle className="text-3xl text-center flex items-center justify-center gap-3">
               <Heart className="w-8 h-8 text-accent animate-pulse" />
-              Namorando há
+              Juntos oficialmente há
               <Heart className="w-8 h-8 text-accent animate-pulse" />
             </CardTitle>
           </CardHeader>
@@ -153,7 +153,7 @@ const Index = () => {
             className="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
           />
           <p className="text-primary font-semibold">
-            "Stitch não deixa família para trás... ou esquecer."
+            "Família quer dizer nunca abandonar ou esquecer."
           </p>
         </div>
       </div>

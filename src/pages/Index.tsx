@@ -2,6 +2,14 @@ import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Sparkles, Calendar } from "lucide-react";
 import stitchImage from "@/assets/stitch.png";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Index = () => {
   // Defina aqui as datas importantes (você pode alterar conforme necessário)
@@ -144,6 +152,57 @@ const Index = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Carrossel de Fotos */}
+        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-300">
+          <CardHeader>
+            <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
+              <Sparkles className="w-6 h-6 text-accent" />
+              Nossos Momentos
+              <Sparkles className="w-6 h-6 text-accent" />
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                })
+              ]}
+              className="w-full max-w-3xl mx-auto"
+            >
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
+                      <p className="text-muted-foreground">Foto 1</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
+                      <p className="text-muted-foreground">Foto 2</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
+                      <p className="text-muted-foreground">Foto 3</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </CardContent>
+        </Card>
 
         {/* Footer com citação do Stitch */}
         <div className="text-center text-lg text-muted-foreground italic animate-in fade-in duration-1000 delay-500">

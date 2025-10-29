@@ -249,13 +249,6 @@ const Index = () => {
 
         {/* Gerador de Frases de Amor */}
         <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-400">
-          <CardHeader>
-            <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
-              <Heart className="w-6 h-6 text-accent animate-pulse" />
-              Mensagens do Coração
-              <Heart className="w-6 h-6 text-accent animate-pulse" />
-            </CardTitle>
-          </CardHeader>
           <CardContent className="space-y-6">
             <div className="min-h-[120px] flex items-center justify-center text-center">
               {lovePhrase ? (

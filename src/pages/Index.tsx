@@ -7,7 +7,7 @@ const Index = () => {
   // Defina aqui as datas importantes (você pode alterar conforme necessário)
   const relationshipStart = new Date("2025-08-08T00:00:00"); // Data de início do namoro
   const firstDate = new Date("2025-07-12T12:45:00"); // Data do primeiro encontro
-  const firstKiss = new Date("202-07-12T14:30:00"); // Data do primeiro beijo
+  const firstKiss = new Date("2025-07-12T14:30:00"); // Data do primeiro beijo
 
   const [timeElapsed, setTimeElapsed] = useState({
     days: 0,
@@ -119,7 +119,7 @@ const Index = () => {
             </CardHeader>
             <CardContent>
               <p className="text-2xl font-semibold text-foreground">
-                {formatDate(firstDate)}
+                {formatDate(firstDate) || 'Carregando ...'}
               </p>
               <p className="text-muted-foreground mt-2">
                 O dia em que tudo começou ✨
@@ -136,7 +136,7 @@ const Index = () => {
             </CardHeader>
             <CardContent>
               <p className="text-2xl font-semibold text-foreground">
-                {formatDate(firstKiss)}
+                {formatDate(firstKiss) || 'Carregando ...'}
               </p>
               <p className="text-muted-foreground mt-2">
                 Um momento inesquecível 💋

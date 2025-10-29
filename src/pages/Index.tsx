@@ -101,7 +101,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[hsl(var(--sunset-start))] via-[hsl(var(--sunset-mid))] to-[hsl(var(--sunset-end))] py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary/20 via-background to-accent/20 py-8 px-4">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header com Stitch */}
         <div className="text-center space-y-4 animate-in fade-in duration-1000">
@@ -111,7 +111,8 @@ const Index = () => {
           </h1>
           <p className="text-2xl text-muted-foreground flex items-center justify-center gap-2">
             <Sparkles className="w-6 h-6 text-accent" />
-            Eu te amo muito 💙 meu pôr do sol 🌇
+            Meu pôr do sol 🌇 Eu te amo
+            <Heart className="w-6 h-6 text-[#3b82f6] fill-[#3b82f6]" />
             <Sparkles className="w-6 h-6 text-accent" />
           </p>
         </div>
@@ -167,7 +168,7 @@ const Index = () => {
         <div className="grid md:grid-cols-2 gap-6 animate-in slide-in-from-bottom duration-1000 delay-200">
           <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 transition-transform">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-accent">
+              <CardTitle className="flex items-center gap-2">
                 <Calendar className="w-6 h-6" />
                 Primeiro Encontro
               </CardTitle>
@@ -184,7 +185,7 @@ const Index = () => {
 
           <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 transition-transform">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-accent">
+              <CardTitle className="flex items-center gap-2">
                 <Heart className="w-6 h-6" />
                 Primeiro Beijo
               </CardTitle>

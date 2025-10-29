@@ -101,7 +101,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/20 via-background to-accent/20 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[hsl(var(--sunset-start))] via-[hsl(var(--sunset-mid))] to-[hsl(var(--sunset-end))] py-8 px-4">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header com Stitch */}
         <div className="text-center space-y-4 animate-in fade-in duration-1000">

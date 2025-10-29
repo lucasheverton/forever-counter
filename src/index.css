@@ -38,6 +38,11 @@ All colors MUST be HSL.
 
     --radius: 1rem;
 
+    /* Sunset gradient colors */
+    --sunset-start: 25 85% 88%;
+    --sunset-mid: 340 75% 85%;
+    --sunset-end: 270 60% 92%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -76,6 +81,11 @@ All colors MUST be HSL.
     --border: 270 30% 20%;
     --input: 270 30% 20%;
     --ring: 270 70% 65%;
+
+    /* Sunset gradient colors - darker version */
+    --sunset-start: 25 70% 25%;
+    --sunset-mid: 340 60% 20%;
+    --sunset-end: 270 45% 18%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

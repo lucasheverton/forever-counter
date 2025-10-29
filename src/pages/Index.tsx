@@ -111,7 +111,7 @@ const Index = () => {
           </h1>
           <p className="text-2xl text-muted-foreground flex items-center justify-center gap-2">
             <Sparkles className="w-6 h-6 text-accent" />
-            Eu te amo muito 💙 meu pôr do sol 🌇
+              Meu pôr do sol 🌇
             <Sparkles className="w-6 h-6 text-accent" />
           </p>
         </div>
@@ -167,8 +167,8 @@ const Index = () => {
         <div className="grid md:grid-cols-2 gap-6 animate-in slide-in-from-bottom duration-1000 delay-200">
           <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 transition-transform">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-accent">
-                <Calendar className="w-6 h-6" />
+              <CardTitle className="flex items-center gap-2">
+                <Calendar className="w-6 h-6 text-accent" />
                 Primeiro Encontro
               </CardTitle>
             </CardHeader>
@@ -184,8 +184,8 @@ const Index = () => {
 
           <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 transition-transform">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-accent">
-                <Heart className="w-6 h-6" />
+              <CardTitle className="flex items-center gap-2">
+                <Heart className="text-accent w-6 h-6" />
                 Primeiro Beijo
               </CardTitle>
             </CardHeader>

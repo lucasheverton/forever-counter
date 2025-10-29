@@ -1,0 +1,4 @@
+project_id = "kxmtmochnaipjbzexbzq"
+
+[functions.generate-love-phrase]
+verify_jwt = false

@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Sparkles, Calendar } from "lucide-react";
 import stitchImage from "@/assets/stitch.png";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import {
   Carousel,
   CarouselContent,
@@ -20,6 +22,10 @@ const Index = () => {
   const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
+
+  const { toast } = useToast();
+  const [lovePhrase, setLovePhrase] = useState<string>("");
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const [timeElapsed, setTimeElapsed] = useState({
     days: 0,
@@ -55,6 +61,43 @@ const Index = () => {
       hour: "2-digit",
       minute: "2-digit",
     });
+  };
+
+  const generateLovePhrase = async () => {
+    setIsGenerating(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('generate-love-phrase');
+      
+      if (error) {
+        console.error("Error calling function:", error);
+        toast({
+          title: "Erro",
+          description: "Não foi possível gerar a frase. Tente novamente.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (data?.error) {
+        toast({
+          title: "Erro",
+          description: data.error,
+          variant: "destructive",
+        });
+        return;
+      }
+
+      setLovePhrase(data.phrase);
+    } catch (error) {
+      console.error("Error generating phrase:", error);
+      toast({
+        title: "Erro",
+        description: "Não foi possível gerar a frase. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   return (
@@ -201,6 +244,39 @@ const Index = () => {
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
+          </CardContent>
+        </Card>
+
+        {/* Gerador de Frases de Amor */}
+        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-400">
+          <CardHeader>
+            <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
+              <Heart className="w-6 h-6 text-accent animate-pulse" />
+              Mensagens do Coração
+              <Heart className="w-6 h-6 text-accent animate-pulse" />
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="min-h-[120px] flex items-center justify-center text-center">
+              {lovePhrase ? (
+                <p className="text-xl md:text-2xl text-primary font-medium leading-relaxed animate-in fade-in duration-500">
+                  "{lovePhrase}"
+                </p>
+              ) : (
+                <p className="text-lg text-muted-foreground">
+                  Clique no botão para descobrir o que eu sinto por você 💜
+                </p>
+              )}
+            </div>
+            <div className="flex justify-center">
+              <button
+                onClick={generateLovePhrase}
+                disabled={isGenerating}
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg"
+              >
+                {isGenerating ? "Gerando..." : "O que eu sinto por você"}
+              </button>
+            </div>
           </CardContent>
         </Card>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Sparkles, Calendar } from "lucide-react";
 import stitchImage from "@/assets/stitch.png";
@@ -16,6 +16,10 @@ const Index = () => {
   const relationshipStart = new Date("2025-08-08T00:00:00"); // Data de início do namoro
   const firstDate = new Date("2025-07-12T12:45:00"); // Data do primeiro encontro
   const firstKiss = new Date("2025-07-12T14:30:00"); // Data do primeiro beijo
+
+  const plugin = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
 
   const [timeElapsed, setTimeElapsed] = useState({
     days: 0,
@@ -168,11 +172,7 @@ const Index = () => {
                 align: "start",
                 loop: true,
               }}
-              plugins={[
-                Autoplay({
-                  delay: 3000,
-                })
-              ]}
+              plugins={[plugin.current]}
               className="w-full max-w-3xl mx-auto"
             >
               <CarouselContent>

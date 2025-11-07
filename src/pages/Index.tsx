@@ -257,36 +257,17 @@ const Index = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors group">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-foreground">Nossa Música</h3>
-                  <p className="text-sm text-muted-foreground">Artista - Álbum</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors group">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-foreground">Música Especial</h3>
-                  <p className="text-sm text-muted-foreground">Artista - Álbum</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors group">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-foreground">Lembra de Nós</h3>
-                  <p className="text-sm text-muted-foreground">Artista - Álbum</p>
-                </div>
-              </div>
+            <div className="w-full rounded-lg overflow-hidden">
+              <iframe 
+                style={{ borderRadius: '12px' }}
+                src="https://open.spotify.com/embed/playlist/5uxGimIJ7vd2PEQLeQtsJa?utm_source=generator&theme=0" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowFullScreen={false}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"
+              />
             </div>
           </CardContent>
         </Card>

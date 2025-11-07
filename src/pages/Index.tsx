@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Sparkles, Calendar } from "lucide-react";
+import { Heart, Sparkles, Calendar, Music, Play } from "lucide-react";
 import stitchImage from "@/assets/stitch.png";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -244,6 +244,50 @@ const Index = () => {
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
+          </CardContent>
+        </Card>
+
+        {/* Playlist do Casal */}
+        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-350">
+          <CardHeader>
+            <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
+              <Music className="w-6 h-6 text-accent" />
+              Nossa Playlist
+              <Music className="w-6 h-6 text-accent" />
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors group">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-foreground">Nossa Música</h3>
+                  <p className="text-sm text-muted-foreground">Artista - Álbum</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors group">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-foreground">Música Especial</h3>
+                  <p className="text-sm text-muted-foreground">Artista - Álbum</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors group">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-foreground">Lembra de Nós</h3>
+                  <p className="text-sm text-muted-foreground">Artista - Álbum</p>
+                </div>
+              </div>
+            </div>
           </CardContent>
         </Card>
 

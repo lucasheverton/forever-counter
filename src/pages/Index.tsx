@@ -278,7 +278,8 @@ const Index = () => {
           <img 
             src={stitchImage} 
             alt="Stitch" 
-            className="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="w-24 h-24 mx-auto mb-4 rounded-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
           />
           <p className="text-primary font-semibold">
             "Família quer dizer nunca abandonar ou esquecer."

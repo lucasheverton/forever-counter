@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Heart, Sparkles, Calendar, Music } from "lucide-react";
 import stitchImage from "@/assets/stitch.png";
 import photo1 from "@/assets/photo1.jpg";
@@ -22,6 +23,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { cn } from "@/lib/utils";
 
 const Index = () => {
   // Defina aqui as datas importantes (você pode alterar conforme necessário)
@@ -36,6 +38,7 @@ const Index = () => {
   const { toast } = useToast();
   const [lovePhrase, setLovePhrase] = useState<string>("");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
 
   const [timeElapsed, setTimeElapsed] = useState({
     days: 0,
@@ -43,6 +46,13 @@ const Index = () => {
     minutes: 0,
     seconds: 0,
   });
+
+  // Função para verificar se uma data é 14 de março ou 8 de agosto
+  const isSpecialDate = (date: Date) => {
+    const month = date.getMonth();
+    const day = date.getDate();
+    return (month === 2 && day === 14) || (month === 7 && day === 8);
+  };
 
   useEffect(() => {
     const calculateTime = () => {
@@ -367,6 +377,45 @@ const Index = () => {
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                 loading="lazy"
               />
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Calendário de Eventos Futuros */}
+        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-375">
+          <CardHeader>
+            <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
+              <Calendar className="w-6 h-6 text-accent" />
+              Calendário de Eventos Futuros
+              <Calendar className="w-6 h-6 text-accent" />
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col items-center gap-6">
+            <CalendarComponent
+              mode="single"
+              selected={selectedDate}
+              onSelect={setSelectedDate}
+              className="rounded-md border pointer-events-auto"
+              modifiers={{
+                special: (date) => isSpecialDate(date)
+              }}
+              modifiersClassNames={{
+                special: "bg-accent text-accent-foreground font-bold ring-2 ring-accent ring-offset-2"
+              }}
+            />
+            <div className="text-center space-y-2">
+              <div className="flex items-center justify-center gap-2 text-sm">
+                <div className="w-4 h-4 bg-accent rounded"></div>
+                <span className="text-muted-foreground">Datas especiais</span>
+              </div>
+              <div className="space-y-1 text-sm">
+                <p className="text-foreground">
+                  <span className="font-semibold">14 de Março:</span> Primeiro Encontro 💫
+                </p>
+                <p className="text-foreground">
+                  <span className="font-semibold">8 de Agosto:</span> Início do Namoro 💜
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>

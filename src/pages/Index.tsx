@@ -1,7 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Sparkles, Calendar, Music, Play } from "lucide-react";
+import { Heart, Sparkles, Calendar, Music } from "lucide-react";
 import stitchImage from "@/assets/stitch.png";
+import photo1 from "@/assets/photo1.jpg";
+import photo2 from "@/assets/photo2.jpg";
+import photo3 from "@/assets/photo3.jpg";
+import photo4 from "@/assets/photo4.jpg";
+import photo5 from "@/assets/photo5.jpg";
+import photo6 from "@/assets/photo6.jpg";
+import photo7 from "@/assets/photo7.jpg";
+import photo8 from "@/assets/photo8.jpg";
+import photo9 from "@/assets/photo9.jpg";
+import photo10 from "@/assets/photo10.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -221,22 +231,111 @@ const Index = () => {
               <CarouselContent>
                 <CarouselItem>
                   <div className="p-1">
-                    <div className="aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground">Foto 1</p>
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo1} 
+                        alt="Nosso momento especial 1" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
                     </div>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
                   <div className="p-1">
-                    <div className="aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground">Foto 2</p>
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo2} 
+                        alt="Nosso momento especial 2" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
                     </div>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
                   <div className="p-1">
-                    <div className="aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground">Foto 3</p>
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo3} 
+                        alt="Nosso momento especial 3" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo4} 
+                        alt="Nosso momento especial 4" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo5} 
+                        alt="Nosso momento especial 5" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo6} 
+                        alt="Nosso momento especial 6" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo7} 
+                        alt="Nosso momento especial 7" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo8} 
+                        alt="Nosso momento especial 8" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo9} 
+                        alt="Nosso momento especial 9" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={photo10} 
+                        alt="Nosso momento especial 10" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
                     </div>
                   </div>
                 </CarouselItem>

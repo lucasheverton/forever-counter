@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Heart, Sparkles, Calendar, Music } from "lucide-react";
 import { ptBR } from "date-fns/locale";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import stitchImage from "@/assets/stitch.png";
 import photo1 from "@/assets/photo1.jpg";
 import photo2 from "@/assets/photo2.jpg";
@@ -35,6 +36,16 @@ const Index = () => {
   const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
+
+  // Hooks de animação para cada seção
+  const headerAnimation = useScrollAnimation();
+  const counterAnimation = useScrollAnimation();
+  const datesAnimation = useScrollAnimation();
+  const photosAnimation = useScrollAnimation();
+  const playlistAnimation = useScrollAnimation();
+  const calendarAnimation = useScrollAnimation();
+  const phraseAnimation = useScrollAnimation();
+  const footerAnimation = useScrollAnimation();
 
   const { toast } = useToast();
   const [lovePhrase, setLovePhrase] = useState<string>("");
@@ -125,7 +136,15 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-primary/20 via-background to-accent/20 py-8 px-4">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header com Stitch */}
-        <div className="text-center space-y-4 animate-in fade-in duration-1000">
+        <div 
+          ref={headerAnimation.ref}
+          className={cn(
+            "text-center space-y-4 transition-all duration-1000",
+            headerAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-10"
+          )}
+        >
           <div className="text-8xl mb-4 animate-bounce">💜</div>
           <h1 className="text-5xl md:text-6xl font-bold text-primary mb-2">
             Nossa História de Amor
@@ -138,7 +157,15 @@ const Index = () => {
         </div>
 
         {/* Contador Principal */}
-        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000">
+        <Card 
+          ref={counterAnimation.ref}
+          className={cn(
+            "bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg transition-all duration-1000",
+            counterAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-10"
+          )}
+        >
           <CardHeader>
             <CardTitle className="text-3xl text-center flex items-center justify-center gap-3">
               <Heart className="w-8 h-8 text-accent animate-pulse" />
@@ -185,7 +212,15 @@ const Index = () => {
         </Card>
 
         {/* Datas Importantes */}
-        <div className="grid md:grid-cols-2 gap-6 animate-in slide-in-from-bottom duration-1000 delay-200">
+        <div 
+          ref={datesAnimation.ref}
+          className={cn(
+            "grid md:grid-cols-2 gap-6 transition-all duration-1000",
+            datesAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-10"
+          )}
+        >
           <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg hover:scale-105 transition-transform">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -222,7 +257,15 @@ const Index = () => {
         </div>
 
         {/* Carrossel de Fotos */}
-        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-300">
+        <Card 
+          ref={photosAnimation.ref}
+          className={cn(
+            "bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg transition-all duration-1000",
+            photosAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-10"
+          )}
+        >
           <CardHeader>
             <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
               <Sparkles className="w-6 h-6 text-accent" />
@@ -358,7 +401,15 @@ const Index = () => {
         </Card>
 
         {/* Playlist do Casal */}
-        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-350">
+        <Card 
+          ref={playlistAnimation.ref}
+          className={cn(
+            "bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg transition-all duration-1000",
+            playlistAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-10"
+          )}
+        >
           <CardHeader>
             <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
               <Music className="w-6 h-6 text-accent" />
@@ -383,7 +434,15 @@ const Index = () => {
         </Card>
 
         {/* Nossas Datas */}
-        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-375">
+        <Card 
+          ref={calendarAnimation.ref}
+          className={cn(
+            "bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg transition-all duration-1000",
+            calendarAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-10"
+          )}
+        >
           <CardHeader>
             <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
               <Calendar className="w-6 h-6 text-accent" />
@@ -420,7 +479,15 @@ const Index = () => {
         </Card>
 
         {/* Gerador de Frases de Amor */}
-        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg animate-in slide-in-from-bottom duration-1000 delay-400">
+        <Card 
+          ref={phraseAnimation.ref}
+          className={cn(
+            "bg-card/80 backdrop-blur-sm border-primary/20 shadow-lg transition-all duration-1000",
+            phraseAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-10"
+          )}
+        >
           <CardContent className="space-y-6">
             <div className="min-h-[120px] flex items-center justify-center text-center">
               {lovePhrase ? (
@@ -446,7 +513,15 @@ const Index = () => {
         </Card>
 
         {/* Footer com citação do Stitch */}
-        <div className="text-center text-lg text-muted-foreground italic animate-in fade-in duration-1000 delay-500">
+        <div 
+          ref={footerAnimation.ref}
+          className={cn(
+            "text-center text-lg text-muted-foreground italic transition-all duration-1000",
+            footerAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-10"
+          )}
+        >
           <img 
             src={stitchImage} 
             alt="Stitch" 
